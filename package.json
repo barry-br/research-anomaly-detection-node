@@ -1,0 +1,15 @@
+{
+  "name": "research-anomaly-detection-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github-br:barry-br/research-anomaly-detection-node.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
