@@ -15,5 +15,20 @@ function getSumOfValues(histogram) {
     return valuesSum;
 }
 
+function getNumberOfBins(histogram) {
+    return Object.keys(histogram).length;
+}
 
-module.exports = { getSumOfValues } ;
+function sortedHistogramValues(histogram) {
+    let values = []
+    for (let k in histogram) {
+        values.push(histogram[k])
+    }
+    values.sort(function(a, b){return a-b});
+    console.log(values)
+    return values
+}
+
+
+
+module.exports = { getSumOfValues, getNumberOfBins, sortedHistogramValues } ;
