@@ -1,46 +1,27 @@
+const AnomalyDetection = require("./components/anomaly-detection");
+const Histogram = require("./components/histogram");
+const Binary = require("./utils/binary")
 
+console.log(Binary.getBinaryMap())
 
-function getBinaryMap() {
-    const binaryMap = {
-        '0': '0000',
-        '1': '0001',
-        '2': '0010',
-        '3': '0011',
-        '4': '0100',
-        '5': '0101',
-        '6': '0110',
-        '7': '0111',
-        '8': '1000',
-        '9': '1001',
-        'a': '1010',
-        'b': '1011',
-        'c': '1100',
-        'd': '1101',
-        'e': '1110',
-        'f': '1111'
-    }
-    return binaryMap;
-}
-
-function letterToBinary(letter) {
-    return getBinaryMap()[letter]
-}
-
-function binaryToLetter(binary) {
-    const binaryMap = getBinaryMap()
-    for (const key in binaryMap) {
-        if (binaryMap[key]==binary) {
-            return key;
-        }
-    }
-    return null;
+const histogram = {
+    "a": 80,
+    "b": 45,
+    "c": 15,
+    "d": 3
 }
 
 
+console.log('summary ' + Histogram.getSumOfValues(histogram));
+console.log('convergence ' + AnomalyDetection.calculateConvergence(histogram, 1));
+console.log('dynamic threshold ' + AnomalyDetection.calculateDynamicThreshold(100,5));
+console.log('percentile threshold ' + AnomalyDetection.calculatePercentileThreshold(histogram,0.1));
 
 
 
-// TEST
-console.log(letterToBinary('a'))
-console.log(binaryToLetter('0111'))
+
+
+
+
+
 
